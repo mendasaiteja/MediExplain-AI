@@ -1,0 +1,24 @@
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4f46e5;
+}
+.nav-buttons button {
+  margin-left: 14px;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 8px;
+  background-color: #e5e7eb;
+  color: #111827;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.nav-buttons button:hover {
+  background-color: #d1d5db;
+}
+.nav-actions{
+    width:50%;
+    display: flex;
+    gap:.3em;
+    padding-left:10em;
+}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './SideEffect.css';
+import Navbar from './Navbar';
 
 const SideEffect = () => {
     const [prescriptionInput, setPrescriptionInput] = useState('');
@@ -64,7 +65,8 @@ const SideEffect = () => {
 
   
 
-    return (
+    return (<>
+    <Navbar/>
         <div className="container">
             <h1>Medical Prescription Side Effects Checker</h1>
 
@@ -99,6 +101,7 @@ const SideEffect = () => {
                 )}
             </div>
         </div>
+        </>
     );
 };
 

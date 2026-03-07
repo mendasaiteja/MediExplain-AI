@@ -2,9 +2,38 @@
 body {
   margin: 0;
   padding: 1rem;
+  padding-top: 64px; 
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   justify-content: center;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: rgba(255,255,255,0.02);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  z-index: 1000;
+  padding: 0 12px;
+  background-color: #c8cacd;
+}
+.navbar .action {
+  background: transparent;
+  border: none;
+  color: inherit;
+  padding: 8px 12px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.navbar .action:hover {
+  background: rgba(0,0,0,0.04);
 }
 
 .container {
@@ -102,4 +131,46 @@ input[type="file"] {
   text-align: center;
   color: #2563eb;
   font-weight: bold;
+}
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.tabs button {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #f3f4f6;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.tabs button.active-tab,
+.tabs button:hover {
+  background: #2563eb;
+  color: #fff;
+  border-color: #1e40af;
+}
+
+.result-container {
+  margin-top: 1rem;
+  background: #f9fafb;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.result-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.disclaimer {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #6b7280;
 }

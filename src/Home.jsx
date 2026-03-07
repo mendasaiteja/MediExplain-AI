@@ -1,21 +1,24 @@
 // Home.js
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Home.css';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import Navbar from "./Navbar";
+import "./Home.css";
+
 function Home() {
   const navigate = useNavigate();
 
   return (
-    <div className="app-container">
-      <h1 className="main-title">Hello! How can I cure you today...</h1>
-
-      <div className="button-grid">
-        <button className="action-button" onClick={() => navigate('/summarize')}>Summarize</button>
-        <button className="action-button" onClick={() => navigate('/prevention')}>Prevention</button>
-        <button className="action-button" onClick={() => navigate('/side-effect')}>Side Effect</button>
-        <button className="action-button" onClick={() => navigate('/medicine-study')}>Study About</button>
+    <>
+      <Navbar />
+      <div className="home-container">
+        <h1 className="main-title">Hello! How can I cure you today?</h1>
+        <button
+          className="predict-button"
+          onClick={() => navigate("/symptom-checker")}>
+          Predict
+        </button>
       </div>
-    </div>
+    </>
   );
 }
 

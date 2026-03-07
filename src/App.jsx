@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { createWorker } from 'tesseract.js';
 import './App.css';
+import Navbar from './Navbar';
+import SymptomChecker from './Predict';
 
 const App = () => {
   const [prescriptionInput, setPrescriptionInput] = useState('');
@@ -100,46 +102,52 @@ Summary:`;
   };
 
   return (
-    <div className="container">
-      <h1 className="title">Medical Prescription Summarizer</h1>
+    <>
+      <Navbar />
+      <div className="container">
+        <h1 className="title">Medical Prescription Summarizer</h1>
 
-      <div className="form-group">
-        <label htmlFor="prescriptionInput">Enter Medical Prescription (optional):</label>
-        <textarea
-          id="prescriptionInput"
-          value={prescriptionInput}
-          onChange={(e) => setPrescriptionInput(e.target.value)}
-          rows="6"
-          placeholder="Or upload an image of a prescription below..."
-        ></textarea>
+        <div className="form-group">
+          <label htmlFor="prescriptionInput">Enter Medical Prescription (optional):</label>
+          <textarea
+            id="prescriptionInput"
+            value={prescriptionInput}
+            onChange={(e) => setPrescriptionInput(e.target.value)}
+            rows="6"
+            placeholder="Or upload an image of a prescription below..."
+          ></textarea>
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="fileUpload">Upload Prescription Image (JPG, PNG, WebP, etc):</label>
+          <input
+            type="file"
+            id="fileUpload"
+            accept="image/*"
+            onChange={handleFileUpload}
+          />
+        </div>
+
+        <button
+          className="submit-btn"
+          onClick={() => summarizePrescription(prescriptionInput)}
+          disabled={isLoading || !prescriptionInput.trim()}
+        >
+          {isLoading ? 'Processing...' : 'Summarize Prescription'}
+        </button>
+
+        {isLoading && <div className="loading">Loading...</div>}
+        {errorMessage && <div className="error-box">{errorMessage}</div>}
+
+        <div className="form-group">
+          <label>Simplified Summary:</label>
+          <div className="output-box" dangerouslySetInnerHTML={{ __html: summaryOutput }} />
+        </div>
+
+        <hr />
+
       </div>
-
-      <div className="form-group">
-        <label htmlFor="fileUpload">Upload Prescription Image (JPG, PNG, WebP, etc):</label>
-        <input
-          type="file"
-          id="fileUpload"
-          accept="image/*"
-          onChange={handleFileUpload}
-        />
-      </div>
-
-      <button
-        className="submit-btn"
-        onClick={() => summarizePrescription(prescriptionInput)}
-        disabled={isLoading || !prescriptionInput.trim()}
-      >
-        {isLoading ? 'Processing...' : 'Summarize Prescription'}
-      </button>
-
-      {isLoading && <div className="loading">Loading...</div>}
-      {errorMessage && <div className="error-box">{errorMessage}</div>}
-
-      <div className="form-group">
-        <label>Simplified Summary:</label>
-        <div className="output-box" dangerouslySetInnerHTML={{ __html: summaryOutput }} />
-      </div>
-    </div>
+    </>
   );
 };
 
