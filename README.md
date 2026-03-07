@@ -1,12 +1,76 @@
-# React + Vite
+🏥 #HealthCare Prescription Simplifier
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An AI-powered web application that converts complex medical prescriptions into simple, understandable language so that patients can easily understand their medicines, precautions, and possible side effects.
 
-Currently, two official plugins are available:
+🧠 #Purpose of the Project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Converts complex medical prescriptions into simple, understandable language.
 
-## Expanding the ESLint configuration
+Helps patients understand what medicines to take, when to take them, why they are prescribed, and possible side effects.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Improves health awareness and safe medication usage.
+
+🚨 #Why It's Important
+
+Many people struggle to understand doctor prescriptions because they contain medical terminology and abbreviations.
+
+This application helps by:
+
+Simplifying medical language.
+
+Reducing the chances of medicine misuse.
+
+Helping patients follow medications correctly.
+
+Improving health literacy.
+
+💡 #Unique Features
+
+Prescription Summary
+Converts complex medical jargon into everyday language.
+
+Precaution Alerts
+Provides warnings about foods, drugs, or activities that should be avoided.
+
+Side Effects Information
+Explains possible risks and side effects in simple terms.
+
+Disease Understanding
+Helps patients understand their medical condition better.
+
+Report Analysis
+Generates clear and summarized health explanations.
+
+🛠 #Technologies Used
+
+Frontend:
+
+React.js
+
+HTML5
+
+CSS3
+
+JavaScript
+
+AI Integration:
+
+Gemini 2.0 Flash (for language simplification)
+
+🚀 #What Makes It Different
+
+Most healthcare apps focus only on medicine reminders.
+
+This app explains prescriptions in human language.
+
+It adapts explanations based on the user's age, literacy level, and language understanding.
+
+🔮 #Future Plans
+
+Order medicines directly from the app.
+
+Daily health check and reminders.
+
+AI voice assistant for better accessibility.
+
+Real-time side effect suggestions.
