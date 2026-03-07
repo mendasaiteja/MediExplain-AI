@@ -32,7 +32,7 @@ Summary:`;
 
       const chatHistory = [{ role: 'user', parts: [{ text: prompt }] }];
       const payload = { contents: chatHistory };
-      const apiKey = 'AIzaSyAKVhbxpQz71nC7DPhCv6MGvNDu0Af-CTc'; // Add your Gemini API key here
+      const apiKey = 'AIzaSyAKVhbxpQz71nC7DPhCv6MGvNDu0Af-CTc'; 
       const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
       const response = await fetch(apiUrl, {
@@ -82,7 +82,6 @@ Summary:`;
         const worker = await createWorker('eng');
         const { data } = await worker.recognize(imageDataUrl);
         await worker.terminate();
-
         const extractedText = data.text.trim();
         setPrescriptionInput(extractedText);
         summarizePrescription(extractedText);
