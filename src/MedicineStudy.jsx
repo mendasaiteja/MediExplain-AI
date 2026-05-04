@@ -11,9 +11,10 @@ const MedicineStudy = () => {
     If multiple medications are included, provide information for each one separately. 
     If no specific medication can be identified, clearly mention that. 
     Use simple, easy-to-understand language suitable for patients.Prescription:${text}Medical Concepts:`;
+    
     const payload = { contents: [{ role: "user", parts: [{ text: prompt }] }] };
-    const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+    const API_KEY = import.meta.env.VITE_API_KEY;
+    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
     try {
       const response = await fetch(apiUrl, {
         method: 'POST',
@@ -48,7 +49,7 @@ const MedicineStudy = () => {
     getMedicalConcepts(prescriptionInput);
   };
   return (
-    <div className="container">
+        <div className="container">
       <h1>Medical Concepts & Medicine Information</h1>
       <div className="form-group">
         <label htmlFor="prescriptionInput">Enter Medicine Name or Prescription:</label>

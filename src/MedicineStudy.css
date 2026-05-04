@@ -1,117 +1,120 @@
-body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #edf2f7;
-}
 .container {
-  background-color: #ffffff;
+  background-color: #0f172a;
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 40px 20px;
-  min-width: 800px;
-  margin: 40px auto;
+  border: 1px solid #334155;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  padding: 30px 25px;
+  width: 100%;
+  max-width: 850px;
+  margin: 20px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  font-family: Arial, sans-serif;
+  gap: 20px;
 }
 
 .container h1 {
-  font-size: 28px;
-  font-weight: bold;
-  color: #2d3748;
   text-align: center;
-  margin-bottom: 20px;
+  color: #166aaa;
+  margin-bottom: 10px;
+  font-size: 34px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
 }
 
 label {
-  display: block;
   font-weight: 600;
-  color: #4a5568;
-  margin-bottom: 8px;
+  color: #040d18;
+  margin-bottom: 6px;
   font-size: 14px;
 }
 
-/* textarea {
+textarea {
   width: 100%;
   padding: 12px;
-  border: 1px solid #cbd5e0;
-  border-radius: 8px;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  background: #111827;
+  color: #e5e7eb;
   font-size: 14px;
-  color: #2d3748;
-  resize: vertical;
-} */
-
-input[type="file"] {
-  font-size: 14px;
-  color: #4a5568;
-  border: none;
-  padding: 6px 0;
+  resize: none;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-button {
-  background-color: #38a169;
-  color: white;
-  font-weight: bold;
-  padding: 12px 24px;
+textarea:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 8px rgba(96, 165, 250, 0.35);
+}
+
+#prescriptionInput {
+  color: #f8fafc;
+  text-align: left;
+}
+
+.submit-btn {
+  padding: 12px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 128, 0, 0.2);
-  transition: background-color 0.3s;
-  width: 100%;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-button:hover {
-  background-color: #2f855a;
+.submit-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
 }
 
-button:disabled {
-  background-color: #9ae6b4;
+.submit-btn:disabled {
+  background: #334155;
   cursor: not-allowed;
+  box-shadow: none;
 }
 
-#sideEffectsOutput {
-  background-color: #edf2f7;
-  border: 1px solid #e2e8f0;
-  padding: 16px;
-  border-radius: 8px;
-  min-height: 100px;
-  color: #2d3748;
-  font-size: 14px;
-  white-space: pre-wrap;
-}
-
-.error-message {
-  background-color: #fed7d7;
-  border: 1px solid #fc8181;
+.error-box {
+  background-color: #2f121c;
+  border: 1px solid #fca5a5;
   padding: 12px;
   border-radius: 8px;
-  color: #c53030;
+  color: #fecaca;
   font-size: 14px;
 }
 
-.flex {
+.output-section {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-}
-#prescriptionInput{
-color: white;
-width: 100%;
-background-color: #cbd5e0;
-border-radius: 10px;
-text-align: center;
+  gap: 8px;
 }
 
-@media (min-width: 600px) {
-  .flex {
-    flex-direction: row;
+.output-box {
+  background: #111827;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 15px;
+  min-height: 120px;
+  font-size: 14px;
+  color: #e5e7eb;
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 16px;
   }
 
-  button {
-    width: auto;
-    flex: 1;
+  textarea {
+    font-size: 13px;
+  }
+
+  .submit-btn {
+    font-size: 14px;
   }
 }

@@ -1,0 +1,145 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h2 {
+  color: #007bff;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+header p {
+  font-size: 1.2em;
+  color: #666;
+  margin: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+textarea {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button {
+  padding: 15px 30px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.error-box {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #f5c6cb;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.result-container {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #e7f3ff;
+  border-radius: 8px;
+  border: 1px solid #b3d9ff;
+}
+
+.result-container h3 {
+  color: #007bff;
+  margin-top: 0;
+  font-size: 1.5em;
+}
+
+.result-text {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.disclaimer {
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #fff3cd;
+  border-radius: 5px;
+  border: 1px solid #ffeaa7;
+}
+
+.disclaimer strong {
+  color: #856404;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  header h2 {
+    font-size: 2em;
+  }
+
+  header p {
+    font-size: 1em;
+  }
+
+  button {
+    padding: 12px 20px;
+    font-size: 1em;
+  }
+}

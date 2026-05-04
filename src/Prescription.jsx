@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import { createWorker } from 'tesseract.js';
-import './App.css';
-import Navbar from './Navbar';
-import SymptomChecker from './Predict';
 
-const App = () => {
+const Prescription = () => {
   const [prescriptionInput, setPrescriptionInput] = useState('');
   const [summaryOutput, setSummaryOutput] = useState('Your simplified prescription summary will appear here.');
   const [isLoading, setIsLoading] = useState(false);
@@ -32,8 +29,8 @@ Summary:`;
 
       const chatHistory = [{ role: 'user', parts: [{ text: prompt }] }];
       const payload = { contents: chatHistory };
-      const apiKey = 'AIzaSyAKVhbxpQz71nC7DPhCv6MGvNDu0Af-CTc'; 
-      const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+      const API_KEY = import.meta.env.VITE_API_KEY;
+      const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
 
       const response = await fetch(apiUrl, {
         method: 'POST',
@@ -101,8 +98,6 @@ Summary:`;
   };
 
   return (
-    <>
-      <Navbar />
       <div className="container">
         <h1 className="title">Medical Prescription Summarizer</h1>
 
@@ -146,8 +141,7 @@ Summary:`;
         <hr />
 
       </div>
-    </>
   );
 };
 
-export default App;
+export default Prescription;
